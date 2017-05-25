@@ -9,13 +9,13 @@ HERE = path.abspath(path.dirname(__file__))
 __version__ = '1.0.0'
 
 REQUIRES = [
-    'requests~=2.13.0',
-    'six~=1.10.0',
+    'requests==2.13.0',
+    'six==1.10.0',
 ]
 TEST = [
-    'pytest~=3.0.0',
-    'pytest_cov~=2.4.0',
-    'flaky~=3.3.0'
+    'pytest==3.0.0',
+    'pytest_cov==2.4.0',
+    'flaky==3.3.0'
 ]
 
 def get_requirements(test_or_prod=False):
@@ -32,11 +32,11 @@ def get_requirements(test_or_prod=False):
     if test_or_prod: #TEST
         requires_list = TEST
         if sys.version_info.major < 3:
-            requires_list.append('configparser~=3.5.0')
+            requires_list.append('configparser==3.5.0')
     else:
         requires_list = REQUIRES
         if sys.version_info.major < 3:
-            requires_list.append('enum~=0.4.6')
+            requires_list.append('enum==0.4.6')
 
     return requires_list
 
